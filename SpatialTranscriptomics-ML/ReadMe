@@ -1,1 +1,27 @@
 
+Spatial transcriptomics data using both conventional neural networks and graph neural networks. It enables researchers to leverage spatial context and gene expression jointly to predict cell clusters or cell types.
+
+Features:
+- Input your own .h5ad spatial transcriptomics data or use a built-in demo dataset
+- Train a Multi-Layer Perceptron (MLP) using expression data ± spatial coordinates
+- Train a Graph Neural Network (GNN) using spatial proximity graphs
+- Compare model performance via accuracy metrics
+- Visualize spatial prediction maps
+
+Usage:
+  python spatial_classify.py --input path/to/data.h5ad --output output_dir --include_coords
+
+  --input : Path to input .h5ad spatial transcriptomics dataset. If omitted, a demo dataset is used.
+  --output : Directory to save models, plots, and outputs (required).
+  --include_coords : Include spatial coordinates as features for the MLP model.
+
+This project implements machine learning models to classify spatial transcriptomics data. It includes:
+- Data loading: Accepts user-provided .h5ad single-cell spatial transcriptomics datasets or, if input data not specified then uses a built-in demo dataset from Squidpy.
+- Preprocessing: Extracts gene expression features and optionally spatial coordinates; performs clustering if cluster labels are missing.
+- Models:
+  1. A Multi-Layer Perceptron (MLP) classifier that uses tabular features (expression ± spatial coordinates).
+  2. A Graph Neural Network (GNN) classifier that constructs a spatial proximity graph and uses graph convolutions to predict cell cluster labels.
+- Training: Trains both models with standard training loops, including train/test splitting for MLP.
+- Evaluation: Reports accuracy for both models on the dataset.
+- Visualization: Saves spatial plots of predicted clusters.
+
