@@ -1,1 +1,22 @@
+This project performs species classification of DNA sequences using k-mer-based feature extraction and Multinomial Naive Bayes classifiers. It evaluates within-species and cross-species classification accuracy between human, chimpanzee, and dog DNA.
 
+Steps:
+1. Import Libraries: BioPython for sequence parsing, sklearn for ML, matplotlib for visualization, and pandas/numpy for data handling.
+2. Preprocessing DNA Sequences: 
+  - string_to_array(): Converts DNA string to a clean lowercase array.
+  - ordinal_encoder() & one_hot_encoder(): Encode sequences numerically (not used in final pipeline).
+  - Kmers_funct(): Extracts k-mers (sliding window of length 6) from DNA sequences.
+3. Load & Preprocess Datasets: Reads DNA data for human, chimpanzee, and dog from .txt files, and then extracts k-mers from sequences and prepares class labels.
+4. Feature Engineering: 
+  - Converts k-mers to "sentences" (e.g., ['aggtcc', 'ggtcca'] → 'a g g t c c g g t c c a').
+  - Uses CountVectorizer (n-gram = 4) to convert text to sparse matrix features.
+5. Model Training and Evaluation:
+  - Trains a Multinomial Naive Bayes classifier on each species' data (80/20 train/test split).
+  - Evaluates model using accuracy, precision, recall, and f1-score.
+6. Cross-Species Prediction: Tests each classifier on other species’ datasets using the original vectorizer. Evaluates transferability/generalizability of species-specific models.
+
+Outputs:
+1. Bar plots showing class distributions.
+2. Classification metrics printed for:
+  - Within-species classification (Human→Human, Chimp→Chimp, Dog→Dog)
+  - Cross-species classification (e.g., Human→Chimp, Chimp→Dog, etc.)
