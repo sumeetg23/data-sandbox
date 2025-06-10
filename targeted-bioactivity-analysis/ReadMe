@@ -1,1 +1,38 @@
+This Jupyter Notebook performs a bioactivity and drug-likeness analysis on compounds targeting the SARS coronavirus 3C-like proteinase (ChEMBL3927) using RDKit, ChEMBL API, and statistical analysis. Here's a concise summary of each step:
 
+1. Data Retrieval
+Uses ChEMBL web client to:
+- Search for the 3C-like proteinase target (CHEMBL3927).
+- Retrieve all compound bioactivity data (specifically IC50) for this target.
+
+2. Data Cleaning & Classification
+Filters out compounds with missing IC50 values. Classifies compounds based on IC50:
+- Active: IC50 ≤ 1000 nM
+- Inactive: IC50 ≥ 10000 nM
+- Intermediate: Between 1000 and 10000 nM
+
+3. Feature Calculation (Lipinski’s Rule)
+Computes four key Lipinski drug-likeness descriptors from SMILES using RDKit:
+- Molecular Weight (MW)
+- LogP (lipophilicity)
+- Number of H-bond Donors
+- Number of H-bond Acceptors
+
+4. Bioactivity Normalization
+Caps extreme IC50 values to avoid distortion. Converts IC50 to pIC50 (more suitable for analysis)
+pIC50 = −log10(IC50 in M)
+
+5. Visualization
+Bar plots: Distribution of compounds by bioactivity class.
+Scatter plot: MW vs. LogP colored by class and sized by pIC50.
+Box plots: Distribution of pIC50 across bioactivity classes.
+
+6. Statistical Analysis
+Uses Kruskal-Wallis test to assess if bioactivity class groups differ significantly across:
+- pIC50
+- MW
+- LogP
+- H-bond Donors
+- H-bond Acceptors
+
+Plots corresponding boxplots and outputs results to CSV.
