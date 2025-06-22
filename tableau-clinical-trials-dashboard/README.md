@@ -41,6 +41,16 @@ The goal is to provide insights into the clinical trial landscape using Tableau.
   - Simplified status (e.g., "Active", "Completed")  
 - **Script**: `clean_clinical_trials.py` (requires `pandas`)
 
+Here are some of the most relevant/useful fields:
+| Purpose             | Recommended Columns                                                                 |
+| ------------------- | ----------------------------------------------------------------------------------- |
+| Trial ID and Titles | `nct_id`, `brief_title`, `official_title`                                           |
+| Trial Type          | `study_type`, `phase`, `overall_status`, `why_stopped`                              |
+| Timeline            | `start_date`, `completion_date`, `primary_completion_date`                          |
+| Recruitment & FDA   | `enrollment`, `enrollment_type`, `is_fda_regulated_drug`, `is_fda_regulated_device` |
+| Source Information  | `source`, `has_dmc`, `plan_to_share_ipd`                                            |
+
+
 ### How to Regenerate Data
 
 1. **Run the data preparation script** (if you want to rebuild):
