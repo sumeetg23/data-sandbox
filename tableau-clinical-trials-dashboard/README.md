@@ -18,17 +18,17 @@ The goal is to provide insights into the clinical trial landscape using Tableau.
 
 ## File Structure
 
-  tableau-clinical-trials-dashboard/
-  ├── data/
-  │   ├── 20250622_export_ctgov/          ← Raw ClinicalTrials.gov export (ignored in repo)
-  │   └── cleaned_trials.csv              ← Cleaned dataset for Tableau
-  ├── scripts/
-  │   └── clean_clinical_trials.py        ← Python data‑prep script
-  ├── dashboard/
-  │   └── clinical_trials_dashboard.twbx ← Tableau packaged workbook
-  ├── screenshots/
-  │   └── dashboard_preview.png           ← Static preview of the dashboard
-  └── README.md                           ← This file
+      tableau-clinical-trials-dashboard/
+      ├── data/
+      │   ├── 20250622_export_ctgov/          ← Raw ClinicalTrials.gov export (ignored in repo)
+      │   └── cleaned_trials.csv              ← Cleaned dataset for Tableau
+      ├── scripts/
+      │   └── clean_clinical_trials.py        ← Python data‑prep script
+      ├── dashboard/
+      │   └── clinical_trials_dashboard.twbx ← Tableau packaged workbook
+      ├── screenshots/
+      │   └── dashboard_preview.png           ← Static preview of the dashboard
+      └── README.md                           ← This file
   
 
 ## Data Cleaning & Preparation
