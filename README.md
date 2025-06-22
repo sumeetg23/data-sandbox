@@ -5,3 +5,5 @@
 2. SpatialTranscriptomics-ML: This project implements machine learning models to classify spatial transcriptomics data. The code leverages popular libraries like Scanpy, Squidpy, PyTorch, and PyTorch Geometric for graph learning, aiming to explore and compare deep learning approaches on spatially resolved transcriptomics data.
 
 3. cross-species-genomics-ml: This Jupyter Notebook implements a DNA sequence classification pipeline using k-mer tokenization and Naive Bayes models, and compares cross-species classification performance between human, chimpanzee, and dog DNA.
+
+4. tableau-clinical-trials-dashboard: A data visualization that explores clinical trial metrics using data from ClinicalTrials.gov.
