@@ -52,4 +52,6 @@ python3 clean_clinical_trials.py  (This creates data/cleaned_trials.csv)
 
 Navigate to dashboard/clinical_trials_dashboard.twbx (Explore visuals or modify them as needed)
 
+Dashboard from Tableau Public Available here: https://public.tableau.com/app/profile/sumeet.gupta/viz/clinical_trials_dashboard/Dashboard1
+
 
